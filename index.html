@@ -259,6 +259,18 @@
                     <a href="#klasifikasi" class="nav-link text-text-secondary hover:text-brand-600 font-medium transition-colors">Tim Kerja</a>
                     <a href="#layanan" class="nav-link text-text-secondary hover:text-brand-600 font-medium transition-colors">Portal Layanan</a>
                 </div>
+                <button id="mobile-menu-toggle" type="button" class="md:hidden w-11 h-11 rounded-xs border border-stroke-default text-text-primary flex items-center justify-center hover:bg-brand-50 transition-colors" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-5">
+                <div class="flex flex-col gap-1 rounded-sm border border-stroke-default bg-surface-raised p-2 shadow-sm">
+                    <a href="#beranda" class="nav-link mobile-nav-link active text-brand-600 font-medium px-4 py-3 rounded-xs hover:bg-brand-50 transition-colors">Beranda</a>
+                    <a href="#tentang" class="nav-link mobile-nav-link text-text-secondary font-medium px-4 py-3 rounded-xs hover:bg-brand-50 hover:text-brand-600 transition-colors">Pengenalan</a>
+                    <a href="#tujuan" class="nav-link mobile-nav-link text-text-secondary font-medium px-4 py-3 rounded-xs hover:bg-brand-50 hover:text-brand-600 transition-colors">Tujuan</a>
+                    <a href="#klasifikasi" class="nav-link mobile-nav-link text-text-secondary font-medium px-4 py-3 rounded-xs hover:bg-brand-50 hover:text-brand-600 transition-colors">Tim Kerja</a>
+                    <a href="#layanan" class="nav-link mobile-nav-link text-text-secondary font-medium px-4 py-3 rounded-xs hover:bg-brand-50 hover:text-brand-600 transition-colors">Portal Layanan</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -810,12 +822,38 @@
 
             // Navbar menyatu dengan hero saat di atas dan menandai menu aktif.
             const navbar = document.getElementById('site-navbar');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
             const backToTopButton = document.getElementById('back-to-top');
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = Array.from(navLinks)
                 .map(link => document.querySelector(link.getAttribute('href')))
-                .filter(Boolean);
+                .filter((section, index, self) => section && self.indexOf(section) === index);
             const revealElements = document.querySelectorAll('.scroll-reveal');
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                mobileMenuToggle.querySelector('i').classList.remove('fa-xmark');
+            }
+
+            mobileMenuToggle.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-bars');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-xmark');
+                }
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
 
             if ('IntersectionObserver' in window) {
                 const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -872,7 +910,13 @@
 
             updateNavbarState();
             window.addEventListener('scroll', updateNavbarState, { passive: true });
-            window.addEventListener('resize', updateNavbarState);
+            window.addEventListener('resize', () => {
+                updateNavbarState();
+
+                if (window.innerWidth >= 768) {
+                    closeMobileMenu();
+                }
+            });
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
