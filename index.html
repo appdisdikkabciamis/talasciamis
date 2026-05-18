@@ -191,12 +191,36 @@
             -webkit-mask-image: linear-gradient(to bottom, transparent 0px, transparent 120px, black 220px, black calc(100% - 160px), transparent 100%);
             mask-image: linear-gradient(to bottom, transparent 0px, transparent 120px, black 220px, black calc(100% - 160px), transparent 100%);
         }
+
+        .nav-link {
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            border-radius: 9999px;
+            background-color: #524980;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 200ms ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body class="font-sans text-base text-text-secondary antialiased bg-surface-muted selection:bg-brand-600 selection:text-surface-raised">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-surface-raised/95 backdrop-blur-md border-b border-stroke-default shadow-sm transition-all duration-300">
+    <nav id="site-navbar" class="fixed w-full z-50 bg-surface-raised/95 backdrop-blur-md border-b border-transparent transition-all duration-300">
         <div class="max-w-7xl mx-auto px-5 sm:px-7 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -208,11 +232,11 @@
                 </div>
                 <!-- Menu Desktop -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#beranda" class="text-text-secondary hover:text-brand-600 font-medium transition">Beranda</a>
-                    <a href="#tentang" class="text-text-secondary hover:text-brand-600 font-medium transition">Pengenalan</a>
-                    <a href="#tujuan" class="text-text-secondary hover:text-brand-600 font-medium transition">Tujuan</a>
-                    <a href="#klasifikasi" class="text-text-secondary hover:text-brand-600 font-medium transition">Tim Kerja</a>
-                    <a href="#layanan" class="text-text-secondary hover:text-brand-600 font-medium transition">Portal Layanan</a>
+                    <a href="#beranda" class="nav-link active text-brand-600 font-medium transition-colors">Beranda</a>
+                    <a href="#tentang" class="nav-link text-text-secondary hover:text-brand-600 font-medium transition-colors">Pengenalan</a>
+                    <a href="#tujuan" class="nav-link text-text-secondary hover:text-brand-600 font-medium transition-colors">Tujuan</a>
+                    <a href="#klasifikasi" class="nav-link text-text-secondary hover:text-brand-600 font-medium transition-colors">Tim Kerja</a>
+                    <a href="#layanan" class="nav-link text-text-secondary hover:text-brand-600 font-medium transition-colors">Portal Layanan</a>
                 </div>
             </div>
         </div>
@@ -747,6 +771,44 @@
             const words = ["Terukur", "Akurat", "Luas", "Akuntabel", "Sinergis"];
             const el = document.getElementById('sliding-word');
             let wordIndex = 0;
+
+            // Navbar menyatu dengan hero saat di atas dan menandai menu aktif.
+            const navbar = document.getElementById('site-navbar');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = Array.from(navLinks)
+                .map(link => document.querySelector(link.getAttribute('href')))
+                .filter(Boolean);
+
+            function updateNavbarState() {
+                const scrollPosition = window.scrollY;
+                const activeOffset = scrollPosition + 120;
+                let activeId = sections[0]?.id;
+
+                if (scrollPosition < 24) {
+                    navbar.classList.remove('shadow-sm', 'border-stroke-default');
+                    navbar.classList.add('border-transparent');
+                } else {
+                    navbar.classList.add('shadow-sm', 'border-stroke-default');
+                    navbar.classList.remove('border-transparent');
+                }
+
+                sections.forEach(section => {
+                    if (activeOffset >= section.offsetTop) {
+                        activeId = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${activeId}`;
+                    link.classList.toggle('active', isActive);
+                    link.classList.toggle('text-brand-600', isActive);
+                    link.classList.toggle('text-text-secondary', !isActive);
+                });
+            }
+
+            updateNavbarState();
+            window.addEventListener('scroll', updateNavbarState, { passive: true });
+            window.addEventListener('resize', updateNavbarState);
             
             setInterval(() => {
                 // 1. Geser kata saat ini ke BAWAH dan pudarkan (Slide out down)
