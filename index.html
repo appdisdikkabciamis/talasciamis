@@ -215,6 +215,11 @@
         .nav-link.active::after {
             transform: scaleX(1);
         }
+
+        #layanan a.group:hover {
+            background-color: #f4f2fb;
+            transform: translateY(-4px);
+        }
     </style>
 </head>
 <body class="font-sans text-base text-text-secondary antialiased bg-surface-muted selection:bg-brand-600 selection:text-surface-raised">
@@ -456,7 +461,7 @@
                 
                 <!-- BOSP -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                     </div>
                     <div class="flex flex-col">
@@ -467,7 +472,7 @@
 
                 <!-- Portal KEJAR -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                         <i class="fa-solid fa-piggy-bank"></i>
                     </div>
                     <div class="flex flex-col">
@@ -478,7 +483,7 @@
 
                 <!-- Konten Digital -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                         <i class="fa-solid fa-laptop-file"></i>
                     </div>
                     <div class="flex flex-col">
@@ -489,7 +494,7 @@
 
                 <!-- Kontrib Kondig -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                         <i class="fa-solid fa-photo-film"></i>
                     </div>
                     <div class="flex flex-col">
@@ -500,7 +505,7 @@
 
                 <!-- WERUH -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center group-hover:bg-accent-500 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="weruh.png" alt="WERUH Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -511,7 +516,7 @@
 
                 <!-- SIAP Upacara -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-red-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center group-hover:bg-red-600 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="upacara.png" alt="SIAP Upacara Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -522,7 +527,7 @@
 
                 <!-- SIMBA -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-orange-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="simba.png" alt="SIMBA Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -533,7 +538,7 @@
 
                 <!-- SIMPRES -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-blue-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="simpres.png" alt="SIMPRES Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -544,7 +549,7 @@
 
                 <!-- SPAB -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-teal-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center group-hover:bg-teal-600 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="spab.png" alt="SPAB Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -555,7 +560,7 @@
 
                 <!-- SPMB -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-rose-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-rose-600 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center text-xl transition-colors">
                         <img src="spmb.png" alt="SPMB Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -566,7 +571,7 @@
 
                 <!-- CKG Sekolah -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="ckgsekolah.png" alt="CKG Sekolah Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -577,7 +582,7 @@
 
                 <!-- Ajang Talenta -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-purple-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                    <div class="w-20 h-20 shrink-0 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+                    <div class="w-20 h-20 shrink-0 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center transition-colors">
                         <img src="ajang talenta.png" alt="Ajang Talenta Icon" class="w-16 h-16 object-contain">
                     </div>
                     <div class="flex flex-col">
@@ -595,7 +600,7 @@
                 <div id="team1-card" class="team-card hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4">
                     <!-- BOSP -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                             <i class="fa-solid fa-file-invoice-dollar"></i>
                         </div>
                         <div class="flex flex-col">
@@ -609,7 +614,7 @@
                 <div id="team2-card" class="team-card hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4">
                     <!-- Portal KEJAR -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                             <i class="fa-solid fa-piggy-bank"></i>
                         </div>
                         <div class="flex flex-col">
@@ -623,7 +628,7 @@
                 <div id="team3-card" class="team-card hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4">
                     <!-- Konten Digital -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                             <i class="fa-solid fa-laptop-file"></i>
                         </div>
                         <div class="flex flex-col">
@@ -633,7 +638,7 @@
                     </a>
                     <!-- Kontrib Kondig -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-brand-50 text-brand-500 rounded-2xl flex items-center justify-center text-4xl transition-colors">
                             <i class="fa-solid fa-photo-film"></i>
                         </div>
                         <div class="flex flex-col">
@@ -643,7 +648,7 @@
                     </a>
                     <!-- WERUH -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center group-hover:bg-accent-500 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="weruh.png" alt="WERUH Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -653,7 +658,7 @@
                     </a>
                     <!-- SIAP Upacara -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-red-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center group-hover:bg-red-600 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="upacara.png" alt="SIAP Upacara Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -667,7 +672,7 @@
                 <div id="team4-card" class="team-card hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-fr gap-4">
                     <!-- SIMBA -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-orange-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="simba.png" alt="SIMBA Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -677,7 +682,7 @@
                     </a>
                     <!-- SIMPRES -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-blue-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="simpres.png" alt="SIMPRES Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -687,7 +692,7 @@
                     </a>
                     <!-- SPAB -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-teal-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center group-hover:bg-teal-600 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="spab.png" alt="SPAB Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -697,7 +702,7 @@
                     </a>
                     <!-- SPMB -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-rose-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-rose-600 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center text-xl transition-colors">
                             <img src="spmb.png" alt="SPMB Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -707,7 +712,7 @@
                     </a>
                     <!-- CKG Sekolah -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="ckgsekolah.png" alt="CKG Sekolah Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -717,7 +722,7 @@
                     </a>
                     <!-- Ajang Talenta -->
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-purple-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
-                        <div class="w-20 h-20 shrink-0 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center group-hover:bg-purple-600 transition-colors">
+                        <div class="w-20 h-20 shrink-0 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center transition-colors">
                             <img src="ajang talenta.png" alt="Ajang Talenta Icon" class="w-16 h-16 object-contain">
                         </div>
                         <div class="flex flex-col">
