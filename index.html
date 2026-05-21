@@ -534,6 +534,17 @@
                     <img src="belajarid.png" alt="BELAJAR.ID" class="max-h-[72px] max-w-full object-contain">
                 </a>
 
+                <!-- CMS.ID -->
+                <a href="#" data-cmsid-modal-trigger class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
+                    <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center transition-colors">
+                        <img src="cmsid.png" alt="CMS ID Icon" class="w-[72px] h-[72px] object-contain">
+                    </div>
+                    <div class="flex flex-col">
+                        <h4 class="font-bold text-text-primary text-3xl mb-0 leading-none">CMS ID</h4>
+                        <p class="text-base text-text-tertiary leading-tight mt-1">Cari dan Daftar Akun CMS ID</p>
+                    </div>
+                </a>
+
                 <!-- KEJAR -->
                 <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
                     <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center transition-colors">
@@ -541,7 +552,7 @@
                     </div>
                     <div class="flex flex-col">
                         <h4 class="font-bold text-text-primary text-3xl mb-0 leading-none">KEJAR</h4>
-                        <p class="text-base text-text-tertiary leading-tight mt-1">Akses Data & Inklusi Keuangan</p>
+                        <p class="text-base text-text-tertiary leading-tight mt-1">Satu Rekening Satu Pelajar</p>
                     </div>
                 </a>
 
@@ -708,6 +719,17 @@
                     <a href="#" class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-brand-300 transition-all group flex items-center justify-center h-full cursor-pointer">
                         <img src="belajarid.png" alt="BELAJAR.ID" class="max-h-[72px] max-w-full object-contain">
                     </a>
+
+                    <!-- CMS.ID -->
+                    <a href="#" data-cmsid-modal-trigger class="bg-surface-raised px-6 py-8 rounded-sm border border-stroke-default shadow-sm hover:shadow-xl hover:border-accent-300 transition-all group flex items-center gap-5 h-full cursor-pointer">
+                        <div class="w-20 h-20 shrink-0 bg-accent-50 text-accent-500 rounded-2xl flex items-center justify-center transition-colors">
+                            <img src="cmsid.png" alt="CMS ID Icon" class="w-[72px] h-[72px] object-contain">
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="font-bold text-text-primary text-3xl mb-0 leading-none">CMS ID</h4>
+                            <p class="text-base text-text-tertiary leading-tight mt-1">Cari dan Daftar Akun CMS ID</p>
+                        </div>
+                    </a>
                 </div>
 
                 <!-- TIM 02 Card -->
@@ -719,7 +741,7 @@
                         </div>
                         <div class="flex flex-col">
                             <h4 class="font-bold text-text-primary text-3xl mb-0 leading-none">KEJAR</h4>
-                            <p class="text-base text-text-tertiary leading-tight mt-1">Akses Data & Inklusi Keuangan</p>
+                            <p class="text-base text-text-tertiary leading-tight mt-1">Satu Rekening Satu Pelajar</p>
                         </div>
                     </a>
                 </div>
@@ -886,6 +908,30 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <div id="cmsid-modal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-slate-950/60 px-4 py-6 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="cmsid-modal-title">
+        <div class="w-full max-w-md rounded-2xl bg-surface-raised p-6 shadow-2xl border border-stroke-default">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <h3 id="cmsid-modal-title" class="font-heading text-2xl font-bold text-text-primary">Pilih Layanan CMS ID</h3>
+                    <p class="mt-1 text-base text-text-secondary">Silakan pilih layanan yang ingin digunakan.</p>
+                </div>
+                <button id="cmsid-modal-close" type="button" aria-label="Tutup modal CMS ID" class="shrink-0 rounded-full w-10 h-10 flex items-center justify-center text-text-secondary hover:bg-surface-muted hover:text-text-primary transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a href="https://www.talasciamis.com/menu/pendaftaran/cari-id" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-xs bg-brand-600 px-5 py-4 font-semibold text-surface-raised hover:bg-brand-700 transition-colors">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Cari</span>
+                </a>
+                <a href="https://www.talasciamis.com/menu/pendaftaran" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-xs border border-brand-600 bg-surface-raised px-5 py-4 font-semibold text-brand-600 hover:bg-brand-50 transition-colors">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Daftar</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript untuk Animasi & Logika -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -899,6 +945,8 @@
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const backToTopButton = document.getElementById('back-to-top');
+            const cmsidModal = document.getElementById('cmsid-modal');
+            const cmsidModalClose = document.getElementById('cmsid-modal-close');
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = Array.from(navLinks)
                 .map(link => document.querySelector(link.getAttribute('href')))
@@ -994,7 +1042,39 @@
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-            
+
+            function openCmsidModal() {
+                cmsidModal.classList.remove('hidden');
+                cmsidModal.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeCmsidModal() {
+                cmsidModal.classList.add('hidden');
+                cmsidModal.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            document.querySelectorAll('[data-cmsid-modal-trigger]').forEach(card => {
+                card.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    openCmsidModal();
+                });
+            });
+
+            cmsidModalClose.addEventListener('click', closeCmsidModal);
+            cmsidModal.addEventListener('click', (event) => {
+                if (event.target === cmsidModal) {
+                    closeCmsidModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !cmsidModal.classList.contains('hidden')) {
+                    closeCmsidModal();
+                }
+            });
+             
             setInterval(() => {
                 // 1. Geser kata saat ini ke BAWAH dan pudarkan (Slide out down)
                 el.classList.remove('translate-y-0', 'opacity-100');
