@@ -877,6 +877,52 @@
         </div>
     </section>
 
+    <!-- Overview TALAS Ciamis Section -->
+    <section id="overview" class="scroll-reveal py-24 bg-surface-raised border-t border-stroke-muted">
+        <div class="max-w-7xl mx-auto px-16 sm:px-20 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-primary mb-4">Overview TALAS Ciamis</h2>
+                <p class="text-lg text-text-secondary max-w-3xl mx-auto">
+                    Kenali lebih dekat inovasi dan manfaat dari TALAS Ciamis melalui tayangan video berikut.
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl bg-black relative group">
+                    <video id="overview-video" controls controlsList="nodownload" class="w-full h-auto aspect-video">
+                        <source src="public/Apa%20itu%20TALAS%20CIAMIS.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung pemutaran video.
+                    </video>
+                    <!-- Custom Play Button Overlay -->
+                    <button id="play-btn" class="absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/40 transition-all duration-300 z-10" aria-label="Putar Video">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 bg-brand-600 rounded-full flex items-center justify-center text-white text-3xl sm:text-4xl shadow-xl transform group-hover:scale-110 transition-transform duration-300 border-4 border-white/20">
+                            <i class="fa-solid fa-play ml-2"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const video = document.getElementById('overview-video');
+                    const playBtn = document.getElementById('play-btn');
+                    
+                    if (video && playBtn) {
+                        playBtn.addEventListener('click', function() {
+                            video.play();
+                        });
+
+                        video.addEventListener('play', function() {
+                            playBtn.style.display = 'none';
+                        });
+
+                        video.addEventListener('pause', function() {
+                            playBtn.style.display = 'flex';
+                        });
+                    }
+                });
+            </script>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="scroll-reveal bg-brand-600 text-surface-raised/90 py-8 border-t border-white/20">
         <div class="max-w-7xl mx-auto px-5 sm:px-7 lg:px-8">
